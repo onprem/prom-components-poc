@@ -1,9 +1,9 @@
 {
   "name": "ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "@prmsrswt/prom-components": "^0.1.1",
+    "@prmsrswt/prom-components": "^0.1.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
