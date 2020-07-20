@@ -1,6 +1,6 @@
 {
   "name": "@prmsrswt/prom-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prometheus component library",
   "keywords": [
     "react",
@@ -26,9 +26,9 @@
     "watch": "rollup -c -w"
   },
   "peerDependencies": {
+    "bootstrap": "^4.5.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "bootstrap": "^4.5.0"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
