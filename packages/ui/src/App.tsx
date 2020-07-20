@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Router, RouteComponentProps, Link } from "@reach/router";
-import { Container } from 'reactstrap';
-import { Checkbox, ToggleMoreLess, Flags } from "@prmsrswt/prom-components";
+import { Container } from "reactstrap";
+import { Checkbox, ToggleMoreLess, Flags, Navigation } from "@prmsrswt/prom-components";
 import { useLocalStorage } from "@prmsrswt/prom-components/lib/hooks";
 import logo from "./logo.svg";
 import "./App.css";
@@ -26,12 +26,15 @@ const Home: FC<RouteComponentProps> = () => {
 
 function App() {
   return (
-    <Container fluid style={{ paddingTop: 70 }}>
-      <Router>
-        <Home path="/" />
-        <Flags path="/flags" pathPrefix="" />
-      </Router>
-    </Container>
+    <>
+      <Navigation pathPrefix="" thanosComponent="query" defaultRoute="/new" />
+      <Container fluid style={{ paddingTop: 70 }}>
+        <Router basepath="/new">
+          <Home path="/" />
+          <Flags path="/flags" pathPrefix="" />
+        </Router>
+      </Container>
+    </>
   );
 }
 
