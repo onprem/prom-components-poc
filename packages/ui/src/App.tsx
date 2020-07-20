@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Router, RouteComponentProps, Link } from "@reach/router";
 import { Container } from "reactstrap";
-import { Checkbox, ToggleMoreLess, Flags, Navigation } from "@prmsrswt/prom-components";
+import { Checkbox, ToggleMoreLess, Flags, Navigation, PanelList } from "@prmsrswt/prom-components";
 import { useLocalStorage } from "@prmsrswt/prom-components/lib/hooks";
 import logo from "./logo.svg";
 import "./App.css";
@@ -32,6 +32,7 @@ function App() {
         <Router basepath="/new">
           <Home path="/" />
           <Flags path="/flags" pathPrefix="" />
+          <PanelList path="/graph" pathPrefix="" />
         </Router>
       </Container>
     </>

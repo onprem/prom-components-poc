@@ -5,7 +5,7 @@ import Flags from "./flags/Flags";
 // import ServiceDiscovery from './serviceDiscovery/Services';
 // import Status from './status/Status';
 // import Targets from './targets/Targets';
-// import PanelList from './graph/PanelList';
+import PanelList from './graph/PanelList';
 // import TSDBStatus from './tsdbStatus/TSDBStatus';
 
-export { Flags };
+export { Flags, PanelList };

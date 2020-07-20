@@ -3,6 +3,7 @@ import typescript from "rollup-plugin-typescript2";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 
 import pkg from "./package.json";
 
@@ -16,6 +17,9 @@ export default [
         exports: "named",
         sourcemap: true,
         strict: false,
+        globals: {
+          jquery: "$",
+        },
       },
     ],
     plugins: [
@@ -25,9 +29,10 @@ export default [
       }),
       resolve(),
       commonjs(),
+      json(),
       typescript(),
     ],
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "@reach/router", "jquery"],
   },
   {
     input: "src/hooks/index.ts",
@@ -48,6 +53,6 @@ export default [
         tsconfigOverride: { compilerOptions: { declaration: false } },
       }),
     ],
-    external: ["react", "react-dom", "@reach/router"],
+    external: ["react", "react-dom", "@reach/router", "jquery"],
   },
 ];

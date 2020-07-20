@@ -1,9 +1,14 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/tempusdominus-bootstrap-4"
+    ]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap"
   },

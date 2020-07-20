@@ -10,6 +10,7 @@
     "removeComments": true,
     "declaration": true,
     "sourceMap": false,
+    "isolatedModules": true,
     "jsx": "react",
     "lib": ["ES6", "DOM", "ES2016", "ES2017"],
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
