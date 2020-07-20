@@ -48,6 +48,6 @@ export default [
         tsconfigOverride: { compilerOptions: { declaration: false } },
       }),
     ],
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "@reach/router"],
   },
 ];

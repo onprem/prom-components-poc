@@ -4,3 +4,5 @@ export { Checkbox };
 
 export * from './components/ToggleMoreLess';
 export * from './components/withStatusIndicator';
+
+export * from './pages/index';

@@ -1,25 +1,37 @@
-import React from "react";
-import { Checkbox, ToggleMoreLess } from "@prmsrswt/prom-components";
+import React, { FC } from "react";
+import { Router, RouteComponentProps, Link } from "@reach/router";
+import { Container } from 'reactstrap';
+import { Checkbox, ToggleMoreLess, Flags } from "@prmsrswt/prom-components";
 import { useLocalStorage } from "@prmsrswt/prom-components/lib/hooks";
 import logo from "./logo.svg";
 import "./App.css";
 
-function App() {
+const Home: FC<RouteComponentProps> = () => {
   const [isChecked, setIsChecked] = useLocalStorage<boolean>("check-me", false);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Prometheus component library demo.</p>
-        <Checkbox id="chk" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)}>
-          Check Me!
-        </Checkbox>
-        <ToggleMoreLess showMore={true} event={() => console.log("toggled")}>
-          More?
-        </ToggleMoreLess>
-      </header>
-    </div>
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <p>Prometheus component library demo.</p>
+      <Link to="/flags">Go to Flags page</Link>
+      <Checkbox id="chk" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)}>
+        Check Me!
+      </Checkbox>
+      <ToggleMoreLess showMore={true} event={() => console.log("toggled")}>
+        More?
+      </ToggleMoreLess>
+    </header>
+  );
+};
+
+function App() {
+  return (
+    <Container fluid style={{ paddingTop: 70 }}>
+      <Router>
+        <Home path="/" />
+        <Flags path="/flags" pathPrefix="" />
+      </Router>
+    </Container>
   );
 }
 

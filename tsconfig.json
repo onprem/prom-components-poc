@@ -13,18 +13,13 @@
     "jsx": "react",
     "lib": ["ES6", "DOM", "ES2016", "ES2017"],
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "typeRoots": [
-      "src/types",
-      "node_modules/@types",
-      "../../node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types", "packages/*/node_modules/@types"]
   },
-  "include": [
-    "src"
-  ],
+  "include": ["packages"],
   "exclude": [
+    "packages/*/node_modules",
     "node_modules",
-    "lib",
-    "rollup.config.js"
+    "packages/*/lib",
+    "packages/*/rollup.config.js"
   ]
 }
